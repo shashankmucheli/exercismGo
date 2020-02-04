@@ -1,15 +1,13 @@
-//This is twofer program to print "One for X, one for me." is X is null or empty then the progam returs "One for you, one for me."
 package twofer
 
 import "fmt"
 
-// ShareWith should have a comment documenting it.
+// ShareWith is a simple function that prints "One for X, one for me." if X is null or empty then the program returns "One for you, one for me."
 func ShareWith(name string) string {
 	var response string
-	if len(name) > 0 {
-		response = fmt.Sprintf("One for %s, one for me.", name)
-	} else {
-		response = fmt.Sprintf("One for you, one for me.")
+	if name == "" {
+		name = "you"
 	}
-	return string(response)
+	response = fmt.Sprintf("One for %s, one for me.", name)
+	return response
 }
